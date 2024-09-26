@@ -65,8 +65,7 @@ SELECT users.id, users.name, roles.name AS role, companies.name AS company, expe
 -- Questão 15
 SELECT schools.id, schools.name AS school, courses.name AS course, companies.name AS company, roles.name AS roles
 	FROM applicants
-	JOIN users ON users.id = applicants.user_id
-	JOIN educations ON educations.user_id = users.id
+	JOIN educations ON educations.user_id = applicants.user_id
 	JOIN courses ON courses.id = educations.course_id
 	JOIN schools ON schools.id = educations.school_id
 	JOIN jobs ON jobs.id = applicants.job_id
